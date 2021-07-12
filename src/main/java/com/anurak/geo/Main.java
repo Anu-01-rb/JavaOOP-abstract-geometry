@@ -12,14 +12,14 @@ package com.anurak.geo;
 public class Main {
     public static void main(String[] args) {
         
-        Geo cir1 = new Geo();
-        Geo cir2 = new Geo();
+        Circle cir1 = new Circle();
+//        Geo cir2 = new Geo();
         
         
         cir1.setRadius(4);
         System.out.println(cir1);
         
-        cir2.setLength(4);
-        System.out.println(cir2);
+//        cir2.setLength(4);
+//        System.out.println(cir2);
     }
 }
