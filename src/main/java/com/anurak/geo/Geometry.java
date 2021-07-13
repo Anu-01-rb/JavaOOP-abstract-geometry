@@ -12,40 +12,21 @@ import java.lang.Math;
  * @author anurak
  */
 abstract class Geometry{
-    private String type;
-    private double area;
-    
-    void setType(String type){
-        this.type = type;
-    }
-    
-    void setArea(double area){
-        this.area = area;
-    }
     
     void setValue(double radius){}
     void setValue(double width, double height){}
-    
-    public void getValue(){
-        System.out.println((type == "")? "Please enter type of geometry" : "Please set value first");
-    }
+    void getValue(){}
     
     @Override
     public String toString(){
-        return (type == "Square")? String.format("This square area is: %.2f", area) : 
-                (type == "Circle")? String.format("This circle area is: %.2f", area):
-                (type == "Triangle")? String.format("This triangle area is: %.2f", area):
-                "Data doesn't exist";
+        return "The data is empty";
     }
 }
 
 class Circle extends Geometry{
     private double radius;
     private final double pi = 22.0/7;
-    
-    Circle(){
-        setType("Circle");
-    }
+    private double area;
     
     @Override
     public void getValue(){
@@ -59,7 +40,7 @@ class Circle extends Geometry{
             return;
         }
         this.radius = radius;
-        setArea(this.pi * Math.pow((this.radius),2));
+        area = (this.pi * Math.pow((this.radius),2));
     }
     
 //    public void setRadius(double radius){
@@ -70,14 +51,15 @@ class Circle extends Geometry{
 //        this.radius = radius;
 //        setArea(Math.pow(this.radius, pi));
 //    }
+    @Override
+    public String toString(){
+        return String.format("This circle area is: %.2f", area);
+    }
 }
 
 class Square extends Geometry{
     private double length;
-    
-    Square(){
-        setType("Square");
-    }
+    private double area;
     
     @Override
     public void getValue(){
@@ -94,7 +76,12 @@ class Square extends Geometry{
             return;
         }
         this.length = len;
-        setArea(this.length * this.length);
+        area = (this.length * this.length);
+    }
+
+    @Override
+    public String toString(){
+        return String.format("This square area is: %.2f", area);
     }
     
 //    public void setLength(double len){
@@ -110,11 +97,8 @@ class Square extends Geometry{
 class Triangle extends Geometry{
     private double width;
     private double height;
+    private double area;
     private final double fml = 0.5;
-    
-    Triangle(){
-        setType("Triangle");
-    }
     
     @Override
     public void setValue(double width, double height){
@@ -128,6 +112,7 @@ class Triangle extends Geometry{
         }
         this.width = width;
         this.height = height;
+        area = fml * height * width;
     }
     
 //    void setWidth(double width){
@@ -150,6 +135,11 @@ class Triangle extends Geometry{
     public void getValue(){
         System.out.println("Width: "+width);
         System.out.println("Height: "+height);
+    }
+
+    @Override
+    public String toString(){
+        return String.format("This triangle area is: %.2f", area);
     }
     
 //    void getWidth(){
