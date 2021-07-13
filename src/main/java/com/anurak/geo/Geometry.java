@@ -11,7 +11,7 @@ import java.lang.Math;
  *
  * @author anurak
  */
-public class Geometry{
+abstract class Geometry{
     private String type;
     private double area;
     
@@ -23,9 +23,20 @@ public class Geometry{
         this.area = area;
     }
     
+    void setValue(){
+        System.out.println("Please enter type of geometry");
+    }
+    
+    public void getValue(){
+        System.out.println((type == "")? "Please enter type of geometry" : "Please set value first");
+    }
+    
     @Override
     public String toString(){
-        return String.format("This area geometry is: %.2f", area);
+        return (type == "Square")? String.format("This square area is: %.2f", area) : 
+                (type == "Circle")? String.format("This circle area is: %.2f", area):
+                (type == "Triangle")? String.format("This triangle area is: %.2f", area):
+                "Data doesn't exist";
     }
 }
 
@@ -37,11 +48,11 @@ class Circle extends Geometry{
         setType("Circle");
     }
     
-    void getRadius(){
+    public void getValue(){
         System.out.println("Radius: "+radius);
     }
     
-    public void setRadius(double radius){
+    public void setValue(double radius){
         if (radius <= 0){
             System.out.println("Radius must greater than 0");
             return;
@@ -49,6 +60,15 @@ class Circle extends Geometry{
         this.radius = radius;
         setArea(Math.pow(this.radius, pi));
     }
+    
+//    public void setRadius(double radius){
+//        if (radius <= 0){
+//            System.out.println("Radius must greater than 0");
+//            return;
+//        }
+//        this.radius = radius;
+//        setArea(Math.pow(this.radius, pi));
+//    }
 }
 
 class Square extends Geometry{
@@ -58,18 +78,31 @@ class Square extends Geometry{
         setType("Square");
     }
     
-    void getLength(){
+    public void getValue(){
         System.out.println("Length: "+length);
     }
     
-    public void setLength(double len){
+//    void getLength(){
+//        System.out.println("Length: "+length);
+//    }
+    
+    public void setValue(double len){
         if (len <= 0){
             System.out.println("Length must greater than 0");
             return;
         }
         this.length = len;
         setArea(this.length * this.length);
-    }   
+    }
+    
+//    public void setLength(double len){
+//        if (len <= 0){
+//            System.out.println("Length must greater than 0");
+//            return;
+//        }
+//        this.length = len;
+//        setArea(this.length * this.length);
+//    }   
 }
 
 class Triangle extends Geometry{
@@ -81,26 +114,43 @@ class Triangle extends Geometry{
         setType("Triangle");
     }
     
-    void setWidth(double width){
+    public void setValue(double width, double height){
         if (width <= 0){
             System.out.println("Width must greater than 0");
             return;
         }
-        this.width = width;
-    }   
-    
-    void setHeight(double height){
         if (height <= 0){
             System.out.println("Height must greater than 0");
             return;
         }
+        this.width = width;
         this.height = height;
     }
     
-    void getWidth(){
+//    void setWidth(double width){
+//        if (width <= 0){
+//            System.out.println("Width must greater than 0");
+//            return;
+//        }
+//        this.width = width;
+//    }   
+//    
+//    void setHeight(double height){
+//        if (height <= 0){
+//            System.out.println("Height must greater than 0");
+//            return;
+//        }
+//        this.height = height;
+//    }
+    public void getValue(){
         System.out.println("Width: "+width);
-    }
-    void getHeight(){
         System.out.println("Height: "+height);
     }
+    
+//    void getWidth(){
+//        System.out.println("Width: "+width);
+//    }
+//    void getHeight(){
+//        System.out.println("Height: "+height);
+//    }
 }

@@ -12,18 +12,8 @@ package com.anurak.geo;
 public class Main {
     public static void main(String[] args) {
         
-        Circle cir1 = new Circle();
-//        Geo cir2 = new Geo();
-        
-        
-        cir1.setRadius(4);
-        System.out.println(cir1);
-        
-//        cir2.setLength(4);
-//        System.out.println(cir2);
-        Square rec = new Square();
-        rec.setLength(10);
-        System.out.println(rec);
-        rec.getLength();
+        Geometry geo2 = new Circle();
+        geo2.getValue();
+        System.out.println(geo2);
     }
 }
