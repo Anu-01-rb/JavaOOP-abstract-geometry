@@ -21,5 +21,9 @@ public class Main {
         
 //        cir2.setLength(4);
 //        System.out.println(cir2);
+        Square rec = new Square();
+        rec.setLength(10);
+        System.out.println(rec);
+        rec.getLength();
     }
 }

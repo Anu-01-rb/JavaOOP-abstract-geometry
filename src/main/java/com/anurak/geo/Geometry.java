@@ -12,7 +12,12 @@ import java.lang.Math;
  * @author anurak
  */
 public class Geometry{
+    private String type;
     private double area;
+    
+    void setType(String type){
+        this.type = type;
+    }
     
     void setArea(double area){
         this.area = area;
@@ -28,8 +33,12 @@ class Circle extends Geometry{
     private double radius;
     private final double pi = 22.0/7;
     
+    Circle(){
+        setType("Circle");
+    }
+    
     void getRadius(){
-        System.out.println(radius);
+        System.out.println("Radius: "+radius);
     }
     
     public void setRadius(double radius){
@@ -44,6 +53,14 @@ class Circle extends Geometry{
 
 class Square extends Geometry{
     private double length;
+    
+    Square(){
+        setType("Square");
+    }
+    
+    void getLength(){
+        System.out.println("Length: "+length);
+    }
     
     public void setLength(double len){
         if (len <= 0){
@@ -60,6 +77,10 @@ class Triangle extends Geometry{
     private double height;
     private final double fml = 0.5;
     
+    Triangle(){
+        setType("Triangle");
+    }
+    
     void setWidth(double width){
         if (width <= 0){
             System.out.println("Width must greater than 0");
@@ -74,5 +95,12 @@ class Triangle extends Geometry{
             return;
         }
         this.height = height;
+    }
+    
+    void getWidth(){
+        System.out.println("Width: "+width);
+    }
+    void getHeight(){
+        System.out.println("Height: "+height);
     }
 }
