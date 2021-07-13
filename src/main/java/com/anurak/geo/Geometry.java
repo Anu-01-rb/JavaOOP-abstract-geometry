@@ -23,9 +23,8 @@ abstract class Geometry{
         this.area = area;
     }
     
-    void setValue(){
-        System.out.println("Please enter type of geometry");
-    }
+    void setValue(double radius){}
+    void setValue(double width, double height){}
     
     public void getValue(){
         System.out.println((type == "")? "Please enter type of geometry" : "Please set value first");
@@ -48,17 +47,19 @@ class Circle extends Geometry{
         setType("Circle");
     }
     
+    @Override
     public void getValue(){
         System.out.println("Radius: "+radius);
     }
     
+    @Override
     public void setValue(double radius){
         if (radius <= 0){
             System.out.println("Radius must greater than 0");
             return;
         }
         this.radius = radius;
-        setArea(Math.pow(this.radius, pi));
+        setArea(this.pi * Math.pow((this.radius),2));
     }
     
 //    public void setRadius(double radius){
@@ -78,6 +79,7 @@ class Square extends Geometry{
         setType("Square");
     }
     
+    @Override
     public void getValue(){
         System.out.println("Length: "+length);
     }
@@ -85,7 +87,7 @@ class Square extends Geometry{
 //    void getLength(){
 //        System.out.println("Length: "+length);
 //    }
-    
+    @Override
     public void setValue(double len){
         if (len <= 0){
             System.out.println("Length must greater than 0");
@@ -114,6 +116,7 @@ class Triangle extends Geometry{
         setType("Triangle");
     }
     
+    @Override
     public void setValue(double width, double height){
         if (width <= 0){
             System.out.println("Width must greater than 0");
@@ -142,6 +145,8 @@ class Triangle extends Geometry{
 //        }
 //        this.height = height;
 //    }
+    
+    @Override
     public void getValue(){
         System.out.println("Width: "+width);
         System.out.println("Height: "+height);
