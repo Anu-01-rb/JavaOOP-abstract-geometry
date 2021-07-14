@@ -9,15 +9,15 @@ package com.anurak.geo;
  *
  * @author anurak
  */
-class Triangle extends Geometry{
-    private double base;
+public class Rectangle extends Geometry{
+    private double width;
     private double height;
     private double area;
     private final double fml = 0.5;
     
     @Override
-    public void setValue(double base, double height){
-        if (base <= 0){
+    public void setValue(double width, double height){
+        if (width <= 0){
             System.out.println("Width must greater than 0");
             return;
         }
@@ -25,14 +25,14 @@ class Triangle extends Geometry{
             System.out.println("Height must greater than 0");
             return;
         }
-        this.base = base;
+        this.width = width;
         this.height = height;
-        area = fml * height * base;
+        area = fml * height * width;
     }
     
     @Override
     public void getValue(){
-        System.out.println("Width: "+base);
+        System.out.println("Width: "+width);
         System.out.println("Height: "+height);
     }
 
