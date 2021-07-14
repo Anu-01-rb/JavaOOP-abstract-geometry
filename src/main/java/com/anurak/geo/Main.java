@@ -11,7 +11,6 @@ package com.anurak.geo;
  */
 public class Main {
     public static void main(String[] args) {
-        
         Geometry geo1 = new Circle();
         geo1.setValue(2);
         System.out.println(geo1);
