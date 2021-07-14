@@ -10,15 +10,14 @@ package com.anurak.geo;
  * @author anurak
  */
 class Circle extends Geometry{
+    //Declare all need variable
     private double radius;
     private final double pi = 22.0/7;
     private double area;
     
-    @Override
-    public void getValue(){
-        System.out.println("Radius: "+radius);
-    }
-    
+    //Creade setValue to get 1 arguments
+    //And check an argument must greater than 0
+    //Then set into class variable
     @Override
     public void setValue(double radius){
         if (radius <= 0){
@@ -29,6 +28,13 @@ class Circle extends Geometry{
         area = (this.pi * Math.pow((this.radius),2));
     }
     
+    //Create getValue to make variable can check the value in all needed class variable
+    @Override
+    public void getValue(){
+        System.out.println("Radius: "+radius);
+    }
+    
+    //Override toString to use with print medthod
     @Override
     public String toString(){
         return String.format("This circle area is: %.2f", area);

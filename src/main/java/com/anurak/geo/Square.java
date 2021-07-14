@@ -13,11 +13,10 @@ class Square extends Geometry{
     private double length;
     private double area;
     
-    @Override
-    public void getValue(){
-        System.out.println("Length: "+length);
-    }
     
+    //Creade setValue to get an arguments
+    //And check an arguments must greater than 0
+    //Then set into class variable
     @Override
     public void setValue(double len){
         if (len <= 0){
@@ -28,6 +27,13 @@ class Square extends Geometry{
         area = (this.length * this.length);
     }
 
+    //Create getValue to make variable can check the value of all needed class variable
+    @Override
+    public void getValue(){
+        System.out.println("Length: "+length);
+    }
+    
+    //Override toString to use with print medthod
     @Override
     public String toString(){
         return String.format("This square area is: %.2f", area);

@@ -10,13 +10,17 @@ package com.anurak.geo;
  * @author anurak
  */
 public class Rectangle extends Geometry{
-    private double width;
+    //Declare all need variable
+    private double width;  
     private double height;
     private double area;
     private final double fml = 0.5;
     
+    //Creade setValue to get 2 arguments
+    //And check all arguments must greater than 0
+    //Then set into class variable
     @Override
-    public void setValue(double width, double height){
+    public void setValue(double width, double height){                  
         if (width <= 0){
             System.out.println("Width must greater than 0");
             return;
@@ -30,12 +34,14 @@ public class Rectangle extends Geometry{
         area = fml * height * width;
     }
     
+    //Create getValue to make variable can check the value of all needed class variable
     @Override
     public void getValue(){
         System.out.println("Width: "+width);
         System.out.println("Height: "+height);
     }
 
+    //Override toString to use with print medthod
     @Override
     public String toString(){
         return String.format("This triangle area is: %.2f", area);

@@ -15,6 +15,9 @@ class Triangle extends Geometry{
     private double area;
     private final double fml = 0.5;
     
+    //Creade setValue to get 2 arguments
+    //And check all arguments must greater than 0
+    //Then set into class variable
     @Override
     public void setValue(double base, double height){
         if (base <= 0){
@@ -30,12 +33,14 @@ class Triangle extends Geometry{
         area = fml * height * base;
     }
     
+    //Create getValue to make variable can check the value of all needed class variable
     @Override
     public void getValue(){
         System.out.println("Width: "+base);
         System.out.println("Height: "+height);
     }
 
+    //Override toString to use with print medthod
     @Override
     public String toString(){
         return String.format("This triangle area is: %.2f", area);
