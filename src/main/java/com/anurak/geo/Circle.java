@@ -28,7 +28,7 @@ class Circle extends Geometry{
         area = (this.pi * Math.pow((this.radius),2));
     }
     
-    //Create getValue to make variable can check the value in all needed class variable
+    //Create getValue to make variable can check the value of all needed class variable
     @Override
     public void getValue(){
         System.out.println("Radius: "+radius);
