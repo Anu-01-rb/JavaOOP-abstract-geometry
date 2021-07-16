@@ -15,7 +15,9 @@ public class TestTriang {
         tag.setValue(6,4);                   //Set value(base, height) to tag
         System.out.println(tag);             //Print tag
         tag.getValue();                      //Require all value in tag
-        tag.setValue(6,5);                   //Re-Set value to tag
+        tag.setValue(-1,5);                  //Re-Set value to tag
+        System.out.println(tag);             //Print tag
+        tag.setValue(6,0);                   //Re-Set value to tag
         System.out.println(tag);             //Print tag
     }
 }

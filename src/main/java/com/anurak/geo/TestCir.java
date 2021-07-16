@@ -15,7 +15,7 @@ public class TestCir {
         circle.setValue(6);                     //Set value(Rasius) to circle
         System.out.println(circle);             //Print circle
         circle.getValue();                      //Require all value in circle
-        circle.setValue(4);                     //Re-Set value to circle
+        circle.setValue(0);                     //Re-Set value to circle
         System.out.println(circle);             //Print circle
     }
 }

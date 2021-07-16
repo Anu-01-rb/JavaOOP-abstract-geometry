@@ -15,7 +15,7 @@ public class TestSq {
         sqr.setValue(6);                     //Set value(length) to sqr
         System.out.println(sqr);             //Print sqr
         sqr.getValue();                      //Require all value in sqr
-        sqr.setValue(4);                     //Re-Set value to sqr
+        sqr.setValue(-1);                    //Re-Set value to sqr
         System.out.println(sqr);             //Print sqr
     }
 }

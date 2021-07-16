@@ -15,7 +15,9 @@ public class TestRec {
         rect.setValue(6,4);                   //Set value(width, height) to circle
         System.out.println(rect);             //Print rect
         rect.getValue();                      //Require all value in rect
-        rect.setValue(6,5);                   //Re-Set value to rect
+        rect.setValue(0,5);                   //Re-Set value to rect
+        System.out.println(rect);             //Print rect
+        rect.setValue(6,-1);                  //Re-Set value to rect
         System.out.println(rect);             //Print rect
     }
 }
