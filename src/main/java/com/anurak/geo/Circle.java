@@ -37,6 +37,7 @@ class Circle extends Geometry{
     //Override toString to use with print medthod
     @Override
     public String toString(){
-        return String.format("This circle area is: %.2f", area);
+        return (this.area != 0)? String.format("This circle area is: %.2f", area) :
+                String.format("Please Enter the value");
     }
 }
