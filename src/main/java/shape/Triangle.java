@@ -3,21 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.anurak.geo;
+package shape;
 
 /**
  *
  * @author anurak
  */
-class Triangle extends Geometry{
+public class Triangle extends Geometry{
     private double base;
     private double height;
-    private double area;
     private final double fml = 0.5;
     
     //Creade setValue to get 2 arguments
     //And check all arguments must greater than 0
     //Then set into class variable
+    
+    public Triangle(double base, double height){
+        if (base <= 0){
+            System.out.println("Width must greater than 0");
+            return;
+        }
+        if (height <= 0){
+            System.out.println("Height must greater than 0");
+            return;
+        }
+        this.base = base;
+        this.height = height;
+        calArea();
+    }
+    
     @Override
     public void setValue(double base, double height){
         if (base <= 0){
@@ -30,7 +44,11 @@ class Triangle extends Geometry{
         }
         this.base = base;
         this.height = height;
-        area = fml * height * base;
+        calArea();
+    }
+    
+    protected void calArea(){
+        this.area = fml * height * base;
     }
     
     //Create getValue to make variable can check the value of all needed class variable

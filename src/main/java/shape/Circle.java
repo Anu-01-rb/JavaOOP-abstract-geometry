@@ -3,21 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.anurak.geo;
+package shape;
 
 /**
  *
  * @author anurak
  */
-class Circle extends Geometry{
+public class Circle extends Geometry{
     //Declare all need variable
     private double radius;
     private final double pi = 22.0/7;
-    private double area;
     
     //Creade setValue to get 1 arguments
     //And check an argument must greater than 0
     //Then set into class variable
+    public Circle(double radius){
+        if (radius <= 0){
+            System.out.println("Radius must greater than 0");
+            return;
+        }
+        this.radius = radius;
+        area = (this.pi * Math.pow((this.radius),2));
+    }
+    
     @Override
     public void setValue(double radius){
         if (radius <= 0){
