@@ -1,26 +1,26 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * OOP : Object-Oriented Programming
+ * Abstract
  */
 package shape;
 
 /**
  *
- * @author anurak
+ * @author Anurak Yutthanawa
+ * 63160015 B.Sc. Computer Science
+ * Burapha University
+ *
  */
-public class Geometry{
+abstract public class Geometry{
      
     protected double area;  
     
-    public void setValue(double radius){}                      //Create setValue Method for make subclass Override
-    public void setValue(double width, double height){}        //Overload setValue method to make Override
-    public void getValue(){}                                    //Create getValue for make subclass Override
-    
+    abstract public void setValue(); 		                     //Create setValue Method for make subclass Override
+    abstract public void getValue();                                 //Create getValue for make subclass Override
+    abstract protected void calArea();
     @Override
-    public String toString(){                           //Create toString to make subclass Override next
-        return "The data is empty";
-    }
+    abstract public String toString();              	             //Create toString to make subclass Override next
+        
 }
 
 

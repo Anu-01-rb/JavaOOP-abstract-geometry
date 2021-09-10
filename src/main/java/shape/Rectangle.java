@@ -1,19 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * OOP : Object-Oriented Programming
+ * Abstract
  */
 package shape;
 
 /**
  *
- * @author anurak
+ * @author Anurak Yutthanawa
+ * 63160015 B.Sc. Computer Science
+ * Burapha University
+ *
  */
 public class Rectangle extends Geometry{
     //Declare all need variable
     protected double width;  
     protected double height;
-    private final double fml = 0.5;
     
     //Creade setValue to get 2 arguments
     //And check all arguments must greater than 0
@@ -47,7 +48,8 @@ public class Rectangle extends Geometry{
         this.height = height;
         calArea();
     }
-    
+   
+    @Override 
     protected void calArea(){
         this.area = this.width * this.height;
     }
