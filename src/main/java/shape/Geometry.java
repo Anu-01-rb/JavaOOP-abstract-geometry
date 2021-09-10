@@ -15,7 +15,8 @@ abstract public class Geometry{
      
     protected double area;  
     
-    abstract public void setValue(); 		                     //Create setValue Method for make subclass Override
+    public void setValue(double width, double height){};    //Create setValue Method for make subclass Override
+    public void setValue(double len){};
     abstract public void getValue();                                 //Create getValue for make subclass Override
     abstract protected void calArea();
     @Override
